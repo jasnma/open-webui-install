@@ -19,7 +19,7 @@ for software in "${REQUIRED_SOFTWARE[@]}"; do
 done
 
 # 从 GitHub 拉取最新代码
-REPO_URL="git@github.com:open-webui/open-webui.git"
+REPO_URL="https://github.com/open-webui/open-webui.git"
 TARGET_DIR="open-webui"
 
 # 如果目标目录已存在，则删除

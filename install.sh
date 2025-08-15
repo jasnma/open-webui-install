@@ -41,10 +41,8 @@ echo "运行设置..."
 
 # 生成 Open WebUI React 前端部分
 echo "生成 React 前端部分..."
-cd frontend || exit
-npm install
+npm install --legacy-peer-deps
 npm run build
-cd ..
 
 # 备份现有的前端静态文件目录
 if [ -d "/usr/share/nginx/html/open-webui" ]; then
@@ -57,7 +55,7 @@ sudo mkdir -p /usr/share/nginx/html/open-webui
 
 # 复制前端静态文件到合理的位置
 echo "复制前端静态文件到 /usr/share/nginx/html/open-webui..."
-sudo cp -r frontend/build/* /usr/share/nginx/html/open-webui
+sudo cp -r build/* /usr/share/nginx/html/open-webui
 
 # 生成 Nginx 配置文件
 echo "生成 Nginx 配置文件..."
